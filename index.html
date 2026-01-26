@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="A Propositional Logic Evaluator">
+    <title>LOGIX - Propositional Logic Evaluator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                LOGIX
+            </h1>
+            <p class="subtitle">Evaluate propositional logic expressions with ease</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Propositions Section -->
+            <section class="section propositions-section">
+                <div class="section-header">
+                    <h2 class="section-title">Propositions</h2>
+                    <button id="add-proposition-btn" class="btn btn-primary">
+                        Add Proposition
+                    </button>
+                </div>
+                <div id="propositions-container" class="propositions-container">
+                    <!-- Propositions will be added dynamically -->
+                </div>
+                <div class="operator-guide">
+                    <h3 class="guide-title">Operator Guide:</h3>
+                    <div class="operators">
+                        <span class="operator-chip">∧ or AND</span>
+                        <span class="operator-chip">∨ or OR</span>
+                        <span class="operator-chip">¬ or NOT</span>
+                        <span class="operator-chip">→ or IMPLIES</span>
+                        <span class="operator-chip">↔ or IFF</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Expression Section -->
+            <section class="section expression-section">
+                <div class="section-header">
+                    <h2 class="section-title">Logical Expression</h2>
+                </div>
+                <div class="expression-input-wrapper">
+                    <textarea id="expression-input" class="expression-input"
+                        placeholder="Enter your logical expression, e.g., (p AND q) OR (NOT r)" rows="3"></textarea>
+                    <div id="expression-feedback" class="expression-feedback"></div>
+                </div>
+                <div class="expression-examples">
+                    <p class="examples-label">Examples:</p>
+                    <div class="examples-container">
+                        <button class="example-btn" data-example="p AND q">p AND q</button>
+                        <button class="example-btn" data-example="NOT p">NOT p</button>
+                        <button class="example-btn" data-example="p OR q">p OR q</button>
+                        <button class="example-btn" data-example="p IMPLIES q">p IMPLIES q</button>
+                        <button class="example-btn" data-example="(p AND q) OR r">(p AND q) OR r</button>
+                        <button class="example-btn" data-example="(p IMPLIES q) AND (q IMPLIES r)">(p IMPLIES q) AND (q
+                            IMPLIES r)</button>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <button id="evaluate-btn" class="btn btn-success btn-large">
+                        Evaluate
+                    </button>
+                    <button id="truth-table-btn" class="btn btn-secondary btn-large">
+                        Truth Table
+                    </button>
+                    <button id="clear-btn" class="btn btn-outline btn-large">
+                        Clear
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="section results-section" id="results-section" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">Results</h2>
+                </div>
+                <div id="results-container" class="results-container">
+                    <!-- Results will be displayed here -->
+                </div>
+            </section>
+
+            <!-- Truth Table Section -->
+            <section class="section truth-table-section" id="truth-table-section" style="display: none;">
+                <div class="section-header">
+                    <h2 class="section-title">Truth Table</h2>
+                </div>
+                <div id="truth-table-container" class="truth-table-container">
+                    <!-- Truth table will be displayed here -->
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>Built for logical thinkers</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
